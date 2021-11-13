@@ -1,2 +1,2 @@
 # Calculator
-TOP Course Calculator
+The Odin Project Calculator
