@@ -1,0 +1,15 @@
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 400px;
+    width: 250px;
+    
+}
+
+.calculator > * {
+    flex: 1;
+}
+
+.calculator > p {
+    grid-column: 1/4;
+}
