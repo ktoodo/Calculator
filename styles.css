@@ -1,6 +1,6 @@
 .calculator {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     height: 400px;
     width: 250px;
     
@@ -11,5 +11,5 @@
 }
 
 .calculator > p {
-    grid-column: 1/4;
+    grid-column: 1/5;
 }
