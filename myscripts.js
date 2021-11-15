@@ -99,7 +99,7 @@ buttons.forEach(button => {
                     num1 = String(num1);
                 }
                 operator1 = `${button.id}`;
-                formulaValue.textContent += `= ${num1}`
+                formulaValue.textContent += ` = ${num1}`
                 num2 = '';
                 displayValue.textContent = num1;
             }
