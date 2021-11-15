@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll('button');
-const displayValue = document.querySelector('p')
+const formulaValue = document.querySelector('.formula');
+const displayValue = document.querySelector('.entry');
 const operators = ['+', '-', '*', '/'];
 
 let num1 = '';
@@ -60,7 +61,8 @@ buttons.forEach(button => {
         // adding operator
         if (operators.includes(button.id) && num2 == '') {
             operator1 = `${button.id}`;
-            displayValue.textContent = `${operator1}`;
+            formulaValue.textContent = `${num1} ${operator1}`
+            displayValue.textContent = `${num1}`;
         }
 
         //modifying num2
@@ -88,6 +90,7 @@ buttons.forEach(button => {
                 operator1 = '';
                 num2 = '';
             } else {
+                formulaValue.textContent = `${num1} ${operator1} ${num2}`
                 num1 = operate(operator1, num1, num2);
                 if (Number.isInteger(num1)) {
                     num1 = String(num1);
@@ -96,6 +99,7 @@ buttons.forEach(button => {
                     num1 = String(num1);
                 }
                 operator1 = `${button.id}`;
+                formulaValue.textContent += `= ${num1}`
                 num2 = '';
                 displayValue.textContent = num1;
             }
@@ -105,7 +109,8 @@ buttons.forEach(button => {
             num1 = '';
             operator1 = '';
             num2 = '';
-            displayValue.textContent = ' ';
+            formulaValue.textContent = ''
+            displayValue.textContent = '0';
         }
 
     })
