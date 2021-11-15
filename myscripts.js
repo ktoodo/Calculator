@@ -28,7 +28,6 @@ document.addEventListener('keydown', function(event) {
     }
   });
 
-
 //calculator and buttons functionality
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -38,30 +37,30 @@ buttons.forEach(button => {
             if (operator1 == '=' && button.id != 'backspace') {
                 num1 = `${button.id}`;
                 operator1 = '';
-                displayValue.textContent = `num1 ${num1}`;
+                displayValue.textContent = `${num1}`;
             } else {
                 if (button.id == 'backspace' && num1.length > 0) {
                     let newText = num1.slice(0, -1);
                     num1 = newText;
-                    displayValue.textContent = `num1 ${num1}`;
+                    displayValue.textContent = `${num1}`;
                 } else {
                     if (num1.includes('.')) {
                         if (button.id >= 0 && button.id <= 9) {
                             num1 += `${button.id}`;
-                            displayValue.textContent = `num1 ${num1}`;
+                            displayValue.textContent = `${num1}`;
                         }
                     } else if (button.id >= 0 && button.id <= 9 || button.id == '.') {
                         num1 += `${button.id}`;
-                        displayValue.textContent = `num1 ${num1}`;
+                        displayValue.textContent = `${num1}`;
                     }
                 }
             }
         }
-        
+
         // adding operator
         if (operators.includes(button.id) && num2 == '') {
             operator1 = `${button.id}`;
-            displayValue.textContent = `operator ${operator1}`;
+            displayValue.textContent = `${operator1}`;
         }
 
         //modifying num2
@@ -69,15 +68,15 @@ buttons.forEach(button => {
             if (button.id == 'backspace' && num2.length > 0) {
                 let newText = num2.slice(0, -1);
                 num2 = newText;
-                displayValue.textContent = `num2 ${num2}`;
+                displayValue.textContent = `${num2}`;
             } else if (num2.includes('.')) {
                 if (button.id >= 0 && button.id <= 9) {
                     num2 += `${button.id}`;
-                    displayValue.textContent = `num2 ${num2}`;
+                    displayValue.textContent = `${num2}`;
                 }
                 } else if (button.id >= 0 && button.id <= 9 || button.id == '.'){
                     num2 += `${button.id}`;
-                    displayValue.textContent = `num2 ${num2}`;
+                    displayValue.textContent = `${num2}`;
                 }
         }
 
